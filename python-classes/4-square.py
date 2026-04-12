@@ -1,4 +1,4 @@
-#!/usr/bin/python3
+echo '#!/usr/bin/python3
 """This module defines a class Square with getter and setter."""
 
 
@@ -6,25 +6,15 @@ class Square:
     """Represent a square."""
 
     def __init__(self, size=0):
-        """Initialize a new Square.
-
-        Args:
-            size (int): The size of the new square.
-        """
         self.size = size
 
     @property
     def size(self):
-        """Get the current size of the square."""
+        """Get/set the current size of the square."""
         return (self.__size)
 
     @size.setter
     def size(self, value):
-        """Set the size of the square with validation.
-
-        Args:
-            value (int): The new size.
-        """
         if not isinstance(value, int):
             raise TypeError("size must be an integer")
         if value < 0:
@@ -32,5 +22,4 @@ class Square:
         self.__size = value
 
     def area(self):
-        """Return the current square area."""
-        return (self.__size * self.__size)
+        return (self.__size * self.__size)' > 4-square.py

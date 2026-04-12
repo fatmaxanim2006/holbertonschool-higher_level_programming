@@ -1,4 +1,4 @@
-#!/usr/bin/python3
+echo '#!/usr/bin/python3
 """This module defines a class Square with a private size attribute."""
 
 
@@ -7,8 +7,7 @@ class Square:
 
     def __init__(self, size):
         """Initialize a new Square.
-
         Args:
             size (int): The size of the new square.
         """
-        self.__size = size
+        self.__size = size' > 1-square.py
