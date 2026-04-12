@@ -1,1 +1,1 @@
-My first square project
+Python Classes and Objects project
