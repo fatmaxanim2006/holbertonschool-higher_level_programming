@@ -1,14 +1,14 @@
 #!/usr/bin/python3
 """
-Bu modul Rectangle class-ını təyin edir.
+Rectangle class-ı üçün modul.
 """
 
 
 class Rectangle:
-    """Düzbucaqlı obyekti yaradan class."""
+    """Düzbucaqlını təyin edən class."""
 
     def __init__(self, width=0, height=0):
-        """İlkin dəyərləri təyin edir."""
+        """İlkin dəyərlər."""
         self.width = width
         self.height = height
 
@@ -54,12 +54,8 @@ class Rectangle:
         """Düzbucaqlını # ilə çəkir."""
         if self.__width == 0 or self.__height == 0:
             return ""
-        rect = []
-        for i in range(self.__height):
-            rect.append("#" * self.__width)
-        return "\n".join(rect)
+        return (("#" * self.__width + "\n") * self.__height)[:-1]
 
     def __repr__(self):
         """Obyektin string təmsilini qaytarır."""
-        return "Rectangle(" + str(self.__width) + ", " + str(self.__height) + ")"
-
+        return "Rectangle({:d}, {:d})".format(self.__width, self.__height)
