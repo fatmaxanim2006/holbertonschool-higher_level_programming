@@ -3,14 +3,14 @@
 
 
 class BaseGeometry:
-    """A class BaseGeometry with validator"""
+    """A class with geometry methods"""
 
     def area(self):
-        """Raises an Exception"""
+        """Raises an Exception for non-implemented area"""
         raise Exception("area() is not implemented")
 
     def integer_validator(self, name, value):
-        """Validates value: must be an integer and greater than 0"""
+        """Validates that value is a positive integer"""
         if type(value) is not int:
             raise TypeError("{} must be an integer".format(name))
         if value <= 0:
