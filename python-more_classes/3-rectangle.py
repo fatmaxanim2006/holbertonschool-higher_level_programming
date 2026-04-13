@@ -1,25 +1,23 @@
 #!/usr/bin/python3
-"""
-Rectangle class module.
-"""
+"""Module that defines a rectangle"""
 
 
 class Rectangle:
-    """Defines a rectangle."""
+    """Class that defines a rectangle"""
 
     def __init__(self, width=0, height=0):
-        """Initialize rectangle."""
+        """Initializes the rectangle"""
         self.width = width
         self.height = height
 
     @property
     def width(self):
-        """Getter for width."""
+        """Retrieves width"""
         return self.__width
 
     @width.setter
     def width(self, value):
-        """Setter for width."""
+        """Sets width"""
         if not isinstance(value, int):
             raise TypeError("width must be an integer")
         if value < 0:
@@ -28,12 +26,12 @@ class Rectangle:
 
     @property
     def height(self):
-        """Getter for height."""
+        """Retrieves height"""
         return self.__height
 
     @height.setter
     def height(self, value):
-        """Setter for height."""
+        """Sets height"""
         if not isinstance(value, int):
             raise TypeError("height must be an integer")
         if value < 0:
@@ -41,21 +39,22 @@ class Rectangle:
         self.__height = value
 
     def area(self):
-        """Returns area."""
+        """Returns the rectangle area"""
         return self.__width * self.__height
 
     def perimeter(self):
-        """Returns perimeter."""
+        """Returns the rectangle perimeter"""
         if self.__width == 0 or self.__height == 0:
             return 0
         return (self.__width * 2) + (self.__height * 2)
 
     def __str__(self):
-        """Returns string of #."""
+        """Returns string representation with #"""
         if self.__width == 0 or self.__height == 0:
             return ""
         return (("#" * self.__width + "\n") * self.__height)[:-1]
 
     def __repr__(self):
-        """Returns string representation."""
-        return "Rectangle({:d}, {:d})".format(self.__width, self.__height)
+        """Returns reproduction string"""
+        return "Rectangle(" + str(self.__width) + ", " + str(self.__height) + ")"
+
