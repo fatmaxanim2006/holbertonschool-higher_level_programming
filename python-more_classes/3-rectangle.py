@@ -1,25 +1,25 @@
 #!/usr/bin/python3
 """
-Bu modul Rectangle class-ına string təmsili (representation) əlavə edir.
+Bu modul Rectangle class-ını təyin edir.
 """
 
 
 class Rectangle:
-    """Düzbucaqlı class-ı."""
+    """Düzbucaqlı obyekti yaradan class."""
 
     def __init__(self, width=0, height=0):
-        """Yeni Rectangle yaradır."""
+        """İlkin dəyərləri təyin edir."""
         self.width = width
         self.height = height
 
     @property
     def width(self):
-        """width getter."""
+        """Eni qaytarır."""
         return self.__width
 
     @width.setter
     def width(self, value):
-        """width setter."""
+        """Eni təyin edir."""
         if not isinstance(value, int):
             raise TypeError("width must be an integer")
         if value < 0:
@@ -28,12 +28,12 @@ class Rectangle:
 
     @property
     def height(self):
-        """height getter."""
+        """Hündürlüyü qaytarır."""
         return self.__height
 
     @height.setter
     def height(self, value):
-        """height setter."""
+        """Hündürlüyü təyin edir."""
         if not isinstance(value, int):
             raise TypeError("height must be an integer")
         if value < 0:
@@ -41,27 +41,24 @@ class Rectangle:
         self.__height = value
 
     def area(self):
-        """Düzbucaqlının sahəsini qaytarır."""
+        """Sahəni hesablayır."""
         return self.__width * self.__height
 
     def perimeter(self):
-        """Düzbucaqlının perimetrini qaytarır."""
+        """Perimetri hesablayır."""
         if self.__width == 0 or self.__height == 0:
             return 0
-        return 2 * (self.__width + self.__height)
+        return (self.__width * 2) + (self.__height * 2)
 
     def __str__(self):
-        """Düzbucaqlını # işarəsi ilə vizual təsvir edir."""
+        """Düzbucaqlını # ilə çəkir."""
         if self.__width == 0 or self.__height == 0:
             return ""
-        
-        rect_str = ""
+        rect = []
         for i in range(self.__height):
-            rect_str += "#" * self.__width
-            if i < self.__height - 1:
-                rect_str += "\n"
-        return rect_str
+            rect.append("#" * self.__width)
+        return "\n".join(rect)
 
     def __repr__(self):
-        """Obyektin yenidən yaradıla bilməsi üçün string qaytarır."""
-        return "Rectangle({:d}, {:d})".format(self.__width, self.__height)
+        """Obyektin string təmsilini qaytarır."""
+        return "Rectangle(" + str(self.__width) + ", " + str(self.__height) + ")"
