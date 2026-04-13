@@ -3,8 +3,8 @@
 
 
 class MyList(list):
-    """Custom list class that inherits from list"""
+    """Custom list class"""
 
     def print_sorted(self):
-        """Prints the list, but sorted (ascending sort)"""
+        """Prints sorted list"""
         print(sorted(self))

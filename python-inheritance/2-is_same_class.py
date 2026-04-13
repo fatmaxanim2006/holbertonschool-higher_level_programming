@@ -3,5 +3,5 @@
 
 
 def is_same_class(obj, a_class):
-    """Checks if obj is exactly an instance of a_class"""
+    """Checks if exactly an instance"""
     return type(obj) is a_class
