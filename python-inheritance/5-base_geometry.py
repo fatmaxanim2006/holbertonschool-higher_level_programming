@@ -1,8 +1,10 @@
 #!/usr/bin/python3
-"""Module for BaseGeometry"""
+"""Module for BaseGeometry class"""
+
 
 class BaseGeometry:
-    """BaseGeometry class"""
+    """BaseGeometry class with area method"""
+
     def area(self):
-        """Raises Exception"""
+        """Raises an Exception for area calculation"""
         raise Exception("area() is not implemented")

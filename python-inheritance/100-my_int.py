@@ -1,11 +1,14 @@
 #!/usr/bin/python3
-"""Module for MyInt"""
+"""Module for MyInt class"""
+
 
 class MyInt(int):
-    """Inverted int"""
-    def __eq__(self, other):
-        """== becomes !="""
-        return super().__ne__(other)
-    def __ne__(self, other):
-        """!= becomes =="""
-        return super().__eq__(other)
+    """MyInt class that inverts == and != operators"""
+
+    def __eq__(self, value):
+        """Inverts the == operator"""
+        return super().__ne__(value)
+
+    def __ne__(self, value):
+        """Inverts the != operator"""
+        return super().__eq__(value)
