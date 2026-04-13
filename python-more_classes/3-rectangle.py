@@ -62,3 +62,4 @@ class Rectangle:
     def __repr__(self):
         """Obyektin string təmsilini qaytarır."""
         return "Rectangle(" + str(self.__width) + ", " + str(self.__height) + ")"
+
