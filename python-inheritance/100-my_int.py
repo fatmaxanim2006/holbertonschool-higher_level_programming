@@ -3,12 +3,12 @@
 
 
 class MyInt(int):
-    """MyInt class that inverts == and != operators"""
+    """A class MyInt that inverts == and != operators"""
 
-    def __eq__(self, value):
-        """Inverts the == operator"""
-        return super().__ne__(value)
+    def __eq__(self, other):
+        """Inverts == into !="""
+        return super().__ne__(other)
 
-    def __ne__(self, value):
-        """Inverts the != operator"""
-        return super().__eq__(value)
+    def __ne__(self, other):
+        """Inverts != into =="""
+        return super().__eq__(other)
