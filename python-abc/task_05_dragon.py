@@ -1,4 +1,3 @@
-cat <<EOF > task_05_dragon.py
 #!/usr/bin/python3
 
 class SwimMixin:
@@ -12,4 +11,3 @@ class FlyMixin:
 class Dragon(SwimMixin, FlyMixin):
     def roar(self):
         print("The dragon roars!")
-EOF
