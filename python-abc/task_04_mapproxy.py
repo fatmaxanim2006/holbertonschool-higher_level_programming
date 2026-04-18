@@ -1,21 +1,22 @@
 #!/usr/bin/python3
 """
-SimpleCustomDict klassı - lüğət elementlərinə atribut kimi müraciət üçün
+SimpleCustomDict modulu - atribut üslublu müraciət üçün
 """
 
 
 class SimpleCustomDict(dict):
     """
-    Standart dict-i genişləndirir və atribut üslublu müraciəti təmin edir
+    Standart lüğəti genişləndirir ki, obyekt.açar kimi istifadə olunsun
     """
 
     def __getattr__(self, key):
-        """Atribut kimi müraciət edildikdə (obj.key)"""
+        """Atribut kimi çağırılanda lüğətdən açarı qaytarır"""
         try:
             return self[key]
         except KeyError:
+            # Atribut tapılmayanda standart AttributeError qaytarılmalıdır
             raise AttributeError("No such attribute: {}".format(key))
 
     def __setattr__(self, key, value):
-        """Atribut təyin edildikdə (obj.key = value)"""
+        """Atribut təyin ediləndə onu lüğətə açar kimi əlavə edir"""
         self[key] = value
