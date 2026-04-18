@@ -27,7 +27,7 @@ Checking for non-positive integers:
     ...
     ValueError: distance must be greater than 0
 
-Checking for non-integer types (list, tuple, bool):
+Checking for non-integer types (list, tuple, bool, None, set):
     >>> bg.integer_validator("age", [3])
     Traceback (most recent call last):
     ...
@@ -39,6 +39,21 @@ Checking for non-integer types (list, tuple, bool):
     TypeError: age must be an integer
 
     >>> bg.integer_validator("age", True)
+    Traceback (most recent call last):
+    ...
+    TypeError: age must be an integer
+
+    >>> bg.integer_validator("age", None)
+    Traceback (most recent call last):
+    ...
+    TypeError: age must be an integer
+
+    >>> bg.integer_validator("age", {3, 4})
+    Traceback (most recent call last):
+    ...
+    TypeError: age must be an integer
+
+    >>> bg.integer_validator("age", 13.5)
     Traceback (most recent call last):
     ...
     TypeError: age must be an integer
