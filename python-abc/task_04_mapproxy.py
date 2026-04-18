@@ -1,23 +1,21 @@
 #!/usr/bin/python3
 """
-Standart dict klassını genişləndirən SimpleCustomDict klassı
+SimpleCustomDict klassı - lüğət elementlərinə atribut kimi müraciət üçün
 """
+
 
 class SimpleCustomDict(dict):
     """
-    Lüğət elementlərinə atribut kimi müraciət etməyə imkan verən klass
+    Standart dict-i genişləndirir və atribut üslublu müraciəti təmin edir
     """
-    def __setitem__(self, key, value):
-        # element əlavə ediləndə standart dict funksiyasını çağırır
-        super().__setitem__(key, value)
 
-    def __getattr__(self, name):
-        # obyekt.atribut kimi müraciət edildikdə işə düşür
+    def __getattr__(self, key):
+        """Atribut kimi müraciət edildikdə (obj.key)"""
         try:
-            return self[name]
+            return self[key]
         except KeyError:
-            raise AttributeError("No such attribute: {}".format(name))
+            raise AttributeError("No such attribute: {}".format(key))
 
-    def __setattr__(self, name, value):
-        # obyekt.atribut = dəyər kimi təyin edildikdə işə düşür
-        self[name] = value
+    def __setattr__(self, key, value):
+        """Atribut təyin edildikdə (obj.key = value)"""
+        self[key] = value
