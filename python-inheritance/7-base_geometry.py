@@ -1,16 +1,16 @@
 #!/usr/bin/python3
-"""Module for BaseGeometry class"""
+"""BaseGeometry sinfi üçün modul"""
 
 
 class BaseGeometry:
-    """A class with geometry methods"""
+    """Həndəsə əməliyyatları üçün baza sinfi"""
 
     def area(self):
-        """Raises an Exception for non-implemented area"""
+        """Hələ tətbiq olunmayıbsa Exception qaytarır"""
         raise Exception("area() is not implemented")
 
     def integer_validator(self, name, value):
-        """Validates that value is a positive integer"""
+        """Dəyərin tam ədəd və 0-dan böyük olmasını yoxlayır"""
         if type(value) is not int:
             raise TypeError("{} must be an integer".format(name))
         if value <= 0:
